@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MainForm from './MainForm'
 import MainSummary from './MainSummary'
+import FEATURES from './features'
 
 import './App.css';
 
@@ -47,8 +48,8 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <MainForm features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature} USCurrencyFormat={USCurrencyFormat}/>
-          <MainSummary features={this.props.features} selected={this.state.selected} updateFeature={this.updateFeature} USCurrencyFormat={USCurrencyFormat}/>
+          <MainForm features={FEATURES} selected={this.state.selected} updateFeature={this.updateFeature} USCurrencyFormat={USCurrencyFormat}/>
+          <MainSummary features={FEATURES} selected={this.state.selected} updateFeature={this.updateFeature} USCurrencyFormat={USCurrencyFormat}/>
         </main>
       </div>
     );
