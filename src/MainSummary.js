@@ -5,8 +5,8 @@ import CartTotal from './CartTotal'
 function MainSummary(props) {
     return (
       <section className="main__summary">
-          <Cart summary={props.summary} USCurrencyFormat={props.USCurrencyFormat} selected={props.selected}/>
-          <CartTotal total={props.total} USCurrencyFormat={props.USCurrencyFormat} selected={props.selected} />
+          <Cart USCurrencyFormat={props.USCurrencyFormat} selected={props.selected}/>
+          <CartTotal USCurrencyFormat={props.USCurrencyFormat} selected={props.selected} />
       </section>
     )
 }

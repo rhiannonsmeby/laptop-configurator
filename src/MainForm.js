@@ -1,12 +1,27 @@
 import React from 'react'
-import Customizer from './Customizer'
+import FEATURES from './features'
+import Feature from './Feature'
 
 function MainForm(props){
-   return( 
-      <form className="main__form">
-        <Customizer updateFeature={props.updateFeature} USCurrencyFormat={props.USCurrencyFormat} features={props.features} featureHash={props.featureHash} options={props.options} itemHash={props.itemHash} selected={props.selected}/>
-      </form>
-   );
+   const features = Object.keys(props.features).map((feature, idx) => {
+      const featureHash = feature + '-' + idx;
+      return (
+          <Feature
+              featureHash={featureHash}
+              feature={feature}
+              features={FEATURES}
+              selected={props.selected}
+              USCurrencyFormat={props.USCurrencyFormat}
+              updateFeature={props.updateFeature} />
+      );
+      });
+      
+    return( 
+          <form className="main__form">
+                <h2>Customize your laptop</h2>
+                {features}
+            </form>
+       );
 }
 
 
